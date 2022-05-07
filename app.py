@@ -84,7 +84,12 @@ def summary():
     buggies = dict(zip([column[0] for column in cur.description], cur.fetchone())).items() 
     return jsonify({ key: val for key, val in buggies if (val != "" and val is not None) })
 
+
+@app.route('/info')
+def info():
+    return render_template("info.html")
 # You shouldn't need to add anything below this!
 if __name__ == '__main__':
     alloc_port = os.environ['CS1999_PORT']
     app.run(debug=True, host="0.0.0.0", port=alloc_port)
+
