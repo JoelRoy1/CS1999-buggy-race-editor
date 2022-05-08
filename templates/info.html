@@ -1,11 +1,547 @@
 {% extends "base.html" %}
 
-
 {% block content %}
 
-<h1>gas prices</h1>
+<h1>This is a list of parts you can add to your buggy</h1>
 
-<h2>too high at the moment so we can't afford to fuel the buggy</h2>
-
-
+<div class="tables">
+<h3 class="mt-5" id="type-power_type">Power type</h3>
+<table class="table table-striped table-bordered table-hover table-responsive elastic">
+<thead class="thead-light">
+    <tr>
+    <th> Power type </th>
+        <th> Cost (points) </th>
+        <th> Mass (kg) </th>
+        <th> Is consumable? </th>
+    <th> Description </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+    <td>
+        bio
+    </td>
+        <td class="number"> 5 </td>
+        <td class="number"> 2 </td>
+        <td>
+        True
+        </td>
+    <td>
+        Bio-fuelled internal combustion engine
+    </td>
+    </tr>
+    <tr>
+    <td>
+        electric
+    </td>
+        <td class="number"> 20 </td>
+        <td class="number"> 20 </td>
+        <td>
+        True
+        </td>
+    <td>
+        Lithium-ion battery
+    </td>
+    </tr>
+    <tr>
+    <td>
+        fusion
+    </td>
+        <td class="number"> 400 </td>
+        <td class="number"> 100 </td>
+        <td>
+        False
+        </td>
+    <td>
+        Fusion reactor
+    </td>
+    </tr>
+    <tr>
+    <td>
+        hamster
+    </td>
+        <td class="number"> 3 </td>
+        <td class="number"> 1 </td>
+        <td>
+        True
+        </td>
+    <td>
+        Hamster
+    </td>
+    </tr>
+    <tr>
+    <td>
+        petrol
+    </td>
+        <td class="number"> 4 </td>
+        <td class="number"> 2 </td>
+        <td>
+        True
+        </td>
+    <td>
+        Petroleum-fuelled internal combustion engine
+    </td>
+    </tr>
+    <tr>
+    <td>
+        rocket
+    </td>
+        <td class="number"> 16 </td>
+        <td class="number"> 2 </td>
+        <td>
+        True
+        </td>
+    <td>
+        Rocket fuel
+    </td>
+    </tr>
+    <tr>
+    <td>
+        solar
+    </td>
+        <td class="number"> 40 </td>
+        <td class="number"> 30 </td>
+        <td>
+        False
+        </td>
+    <td>
+        Bank of solar panels
+    </td>
+    </tr>
+    <tr>
+    <td>
+        steam
+    </td>
+        <td class="number"> 3 </td>
+        <td class="number"> 4 </td>
+        <td>
+        True
+        </td>
+    <td>
+        Steam engine
+    </td>
+    </tr>
+    <tr>
+    <td>
+        thermo
+    </td>
+        <td class="number"> 300 </td>
+        <td class="number"> 100 </td>
+        <td>
+        False
+        </td>
+    <td>
+        Thermonuclear reactor
+    </td>
+    </tr>
+    <tr>
+    <td>
+        wind
+    </td>
+        <td class="number"> 20 </td>
+        <td class="number"> 30 </td>
+        <td>
+        False
+        </td>
+    <td>
+        Sailing rig
+    </td>
+    </tr>
+</tbody>
+</table>
+<h3 class="mt-5" id="type-tyres">Tyres</h3>
+<table class="table table-striped table-bordered table-hover table-responsive elastic">
+<thead class="thead-light">
+    <tr>
+    <th> Tyres </th>
+        <th> Cost (points) </th>
+        <th> Mass (kg) </th>
+    <th> Description </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+    <td>
+        knobbly
+    </td>
+        <td class="number"> 15 </td>
+        <td class="number"> 20 </td>
+    <td>
+        Great for off-roading
+    </td>
+    </tr>
+    <tr>
+    <td>
+        maglev
+    </td>
+        <td class="number"> 50 </td>
+        <td class="number"> 30 </td>
+    <td>
+        You can't get punctures if you don't touch the ground. Frictionless.
+    </td>
+    </tr>
+    <tr>
+    <td>
+        reactive
+    </td>
+        <td class="number"> 40 </td>
+        <td class="number"> 20 </td>
+    <td>
+        Intelligent nanotech swarm rubber restructures itself depending on the conditions
+    </td>
+    </tr>
+    <tr>
+    <td>
+        slick
+    </td>
+        <td class="number"> 10 </td>
+        <td class="number"> 14 </td>
+    <td>
+        Fast choice for roads and rain
+    </td>
+    </tr>
+    <tr>
+    <td>
+        steelband
+    </td>
+        <td class="number"> 20 </td>
+        <td class="number"> 28 </td>
+    <td>
+        Slower but almost impossible to puncture
+    </td>
+    </tr>
+</tbody>
+</table>
+<h3 class="mt-5" id="type-armour">Armour</h3>
+<table class="table table-striped table-bordered table-hover table-responsive elastic">
+<thead class="thead-light">
+    <tr>
+    <th> Armour </th>
+        <th> Cost (points) </th>
+        <th> Mass (kg) </th>
+    <th> Description </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+    <td>
+        aluminium
+    </td>
+        <td class="number"> 200 </td>
+        <td class="number"> 50 </td>
+    <td>
+        Fairly strong but light
+    </td>
+    </tr>
+    <tr>
+    <td>
+        none
+    </td>
+        <td class="number"> 0 </td>
+        <td class="number"> 0 </td>
+    <td>
+        Unburdened and unprotected. Ideal for trips to the shops
+    </td>
+    </tr>
+    <tr>
+    <td>
+        thicksteel
+    </td>
+        <td class="number"> 200 </td>
+        <td class="number"> 400 </td>
+    <td>
+        Very strong but very heavy
+    </td>
+    </tr>
+    <tr>
+    <td>
+        thinsteel
+    </td>
+        <td class="number"> 100 </td>
+        <td class="number"> 200 </td>
+    <td>
+        Strong but heavy
+    </td>
+    </tr>
+    <tr>
+    <td>
+        titanium
+    </td>
+        <td class="number"> 290 </td>
+        <td class="number"> 300 </td>
+    <td>
+        The ultimate in plate protection, but pricey
+    </td>
+    </tr>
+    <tr>
+    <td>
+        wood
+    </td>
+        <td class="number"> 40 </td>
+        <td class="number"> 100 </td>
+    <td>
+        Cheap but pragmatic (sustainable forests are used where possible)
+    </td>
+    </tr>
+</tbody>
+</table>
+<h3 class="mt-5" id="type-attack">Attack</h3>
+<table class="table table-striped table-bordered table-hover table-responsive elastic">
+<thead class="thead-light">
+    <tr>
+    <th> Attack </th>
+        <th> Cost (points) </th>
+        <th> Mass (kg) </th>
+    <th> Description </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+    <td>
+        biohazard
+    </td>
+        <td class="number"> 30 </td>
+        <td class="number"> 10 </td>
+    <td>
+        A cloud of infectious spores that target homonids and rodents
+    </td>
+    </tr>
+    <tr>
+    <td>
+        charge
+    </td>
+        <td class="number"> 28 </td>
+        <td class="number"> 25 </td>
+    <td>
+        An electric lance like a cattleprod made of lightning
+    </td>
+    </tr>
+    <tr>
+    <td>
+        flame
+    </td>
+        <td class="number"> 20 </td>
+        <td class="number"> 12 </td>
+    <td>
+        A flamethrower that puffs out a ball of fire
+    </td>
+    </tr>
+    <tr>
+    <td>
+        none
+    </td>
+        <td class="number"> 0 </td>
+        <td class="number"> 0 </td>
+    <td>
+        Mostly harmless
+    </td>
+    </tr>
+    <tr>
+    <td>
+        spike
+    </td>
+        <td class="number"> 5 </td>
+        <td class="number"> 10 </td>
+    <td>
+        A metal prong welded onto the superstructure
+    </td>
+    </tr>
+</tbody>
+</table>
+<h3 class="mt-5" id="type-algo">Algo</h3>
+<table class="table table-striped table-bordered table-hover table-responsive elastic">
+<thead class="thead-light">
+    <tr>
+    <th> Algo </th>
+        <th> Cost (points) </th>
+        <th> Mass (kg) </th>
+    <th> Description </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+    <td>
+        buggy
+    </td>
+        <td class="number"> 0 </td>
+        <td class="number"> 0 </td>
+    <td>
+        A bad state that occurs when damaged
+    </td>
+    </tr>
+    <tr>
+    <td>
+        defensive
+    </td>
+        <td class="number"> 0 </td>
+        <td class="number"> 0 </td>
+    <td>
+        Always avoids conflict: will attack but only reluctantly
+    </td>
+    </tr>
+    <tr>
+    <td>
+        offensive
+    </td>
+        <td class="number"> 0 </td>
+        <td class="number"> 0 </td>
+    <td>
+        Always seeks to attack (while attacks are available)
+    </td>
+    </tr>
+    <tr>
+    <td>
+        random
+    </td>
+        <td class="number"> 0 </td>
+        <td class="number"> 0 </td>
+    <td>
+        Capriciously defensive, steady, or offensive at different times during the race, based on mood
+    </td>
+    </tr>
+    <tr>
+    <td>
+        steady
+    </td>
+        <td class="number"> 0 </td>
+        <td class="number"> 0 </td>
+    <td>
+        The middle way: doesn't seek out attacks but makes them if opportunities present themselves
+    </td>
+    </tr>
+    <tr>
+    <td>
+        titfortat
+    </td>
+        <td class="number"> 0 </td>
+        <td class="number"> 0 </td>
+    <td>
+        Starts steady, but petulantly switches to offence if attacked
+    </td>
+    </tr>
+</tbody>
+</table>
+<h3 class="mt-5" id="type-flag_pattern">Flag pattern</h3>
+<table class="table table-striped table-bordered table-hover table-responsive elastic">
+<thead class="thead-light">
+    <tr>
+    <th> Flag pattern </th>
+    <th> Description </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+    <td>
+        checker
+    </td>
+    <td>
+        A chequered grid
+    </td>
+    </tr>
+    <tr>
+    <td>
+        dstripe
+    </td>
+    <td>
+        Diagonal stripes
+    </td>
+    </tr>
+    <tr>
+    <td>
+        hstripe
+    </td>
+    <td>
+        Horizontal stripes
+    </td>
+    </tr>
+    <tr>
+    <td>
+        plain
+    </td>
+    <td>
+        A plain field with no secondary colour
+    </td>
+    </tr>
+    <tr>
+    <td>
+        spot
+    </td>
+    <td>
+        Spotted
+    </td>
+    </tr>
+    <tr>
+    <td>
+        vstripe
+    </td>
+    <td>
+        Vertical stripes
+    </td>
+    </tr>
+</tbody>
+</table>
+<h3 class="mt-5" id="type-special">Special</h3>
+<table class="table table-striped table-bordered table-hover table-responsive elastic">
+<thead class="thead-light">
+    <tr>
+    <th> Special </th>
+        <th> Cost (points) </th>
+        <th> Mass (kg) </th>
+    <th> Description </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+    <td>
+        antibiotic
+    </td>
+        <td class="number"> 90 </td>
+        <td class="number"> 8 </td>
+    <td>
+        antibiotic?
+    </td>
+    </tr>
+    <tr>
+    <td>
+        banging
+    </td>
+        <td class="number"> 42 </td>
+        <td class="number"> 40 </td>       
+    <td>
+        banging?
+    </td>
+    </tr>   
+    <tr>
+    <td>
+        fireproof
+    </td>
+        <td class="number"> 70 </td>  
+        <td class="number"> 8 </td>
+    <td>
+        fireproof?
+    </td>
+    </tr> 
+    <tr>
+    <td>
+        hamster_booster
+    </td>
+        <td class="number"> 5 </td>      
+        <td class="number"> 1 </td>   
+    <td>
+        steroids for hamsters
+    </td>
+    </tr>   
+    <tr>
+    <td>
+        insulated
+    </td>    
+        <td class="number"> 100 </td>    
+        <td class="number"> 20 </td>
+    <td>
+        insulated?
+    </td>
+    </tr>  
+</tbody>
+</table>
+</div>
 {% endblock %}

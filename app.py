@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request, jsonify
 import os
 import sqlite3 as sql
+from flask_wtf import FlaskForm
+from wtforms import  IntegerField, validators
+
 
 # app - The flask application where all the magical things are configured.
 app = Flask(__name__)
+app.config['SECRET_KEY']='LongAndRandomSecretKey'
 
 # Constants - Stuff that we need to know that won't ever change!
 DATABASE_FILE = "database.db"
@@ -13,6 +17,12 @@ BUGGY_RACE_SERVER_URL = "https://rhul.buggyrace.net"
 #------------------------------------------------------------
 # the index page
 #------------------------------------------------------------
+
+
+
+class makeBuggyForm(FlaskForm):
+    wheels = IntegerField(label=("Enter number of wheels for your buggy: "), validators=[validators.NumberRange(min=4, max=12, message="Please make sure the number of Wheels is between 4 and 12")])
+
 @app.route('/')
 def home():
     return render_template('index.html', server_url=BUGGY_RACE_SERVER_URL)
@@ -24,17 +34,18 @@ def home():
 #------------------------------------------------------------
 @app.route('/new', methods = ['POST', 'GET'])
 def create_buggy():
+    form = makeBuggyForm(request.form)
     if request.method == 'GET':
-        return render_template("buggy-form.html")
-    elif request.method == 'POST':
-        msg=""
-        qty_wheels = request.form['qty_wheels']
+        return render_template("buggy-form.html", form=form)
+    elif request.method == 'POST' and form.validate():
+
+        qty_wheels = form.wheels.data
+        flag_color = request.form['flag_color']
         try:
             with sql.connect(DATABASE_FILE) as con:
                 cur = con.cursor()
                 cur.execute(
-                    "UPDATE buggies set qty_wheels=? WHERE id=?",
-                    (qty_wheels, DEFAULT_BUGGY_ID)
+                    "UPDATE buggies SET qty_wheels=?, flag_color=? WHERE id=?",(qty_wheels, flag_color, DEFAULT_BUGGY_ID)       
                 )
                 con.commit()
                 msg = "Record successfully saved"

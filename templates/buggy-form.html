@@ -5,8 +5,13 @@
   <h1>Make buggy</h1>
 
   <form action="/new" method="post">
-    <label for="qty_wheels">Number of wheels:</label>
-    <input type="text" name="qty_wheels" />
+    <div class="form-group col-md-6">
+      {{ form.csrf_token() }}
+      <label for=""> {{ form.wheels.label }}</label>
+      {{ form.wheels }}
+    </div>
+    <label for="flag_color">Flag Colour</label>
+    <input type="text" name="flag_color"/>
     <input type="submit" class="button">
   </form>
 
