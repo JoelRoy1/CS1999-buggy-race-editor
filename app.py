@@ -34,7 +34,7 @@ def home():
 #------------------------------------------------------------
 @app.route('/new', methods = ['POST', 'GET'])
 def create_buggy():
-    form = makeBuggyForm(request.form)
+    form = makeBuggyForm(wheels=4)
     if request.method == 'GET':
         return render_template("buggy-form.html", form=form)
     elif request.method == 'POST' and form.validate():
@@ -74,7 +74,14 @@ def show_buggies():
 #------------------------------------------------------------
 @app.route('/edit')
 def edit_buggy():
-    return render_template("buggy-form.html")
+    con = sql.connect(DATABASE_FILE)
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("SELECT * FROM buggies")
+    rows = cur.fetchall()
+    for row in rows:
+        form = makeBuggyForm(wheels=row[1])
+    return render_template("edit.html", form=form)
 
 #------------------------------------------------------------
 # You probably don't need to edit this... unless you want to ;)
