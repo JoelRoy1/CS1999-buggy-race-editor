@@ -28,7 +28,23 @@ connection.execute("""
     qty_wheels            INTEGER DEFAULT 4,
     flag_color            VARCHAR(20),
     flag_color_secondary  VARCHAR(20),
-    flag_pattern          VARCHAR(20)
+    flag_pattern          VARCHAR(20),
+    power_type            VARCHAR(20),
+    power_units           INTEGER DEFAULT 1,
+    aux_power_type        VARCHAR(20),
+    aux_power_units       INTEGER DEFAULT 0,
+    hamster_booster        INTEGER DEFAULT 0,
+    wheels                VARCHAR(20),
+    armour                VARCHAR(20),
+    attack                VARCHAR(20),
+    qty_attacks           INTEGER DEFAULT 0,
+    fireproof             INTEGER DEFAULT 0,
+    insulate              INTEGER DEFAULT 0,
+    antibiotic            INTEGER DEFAULT 0,
+    banging               INTEGER DEFAULT 0,
+    algo                  VARCHAR(20),
+    total_cost            INTEGER DEFAULT 0
+
   )
 
 """)

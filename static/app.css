@@ -3,18 +3,14 @@ html{
   padding: 0; 
 }
 body {
+  align-items: center;
+  justify-content: center;
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  width: 100%;
   font-size: 1.2em;
-  color: #000000;
-  background: repeating-linear-gradient(
-    45deg,
-    #ffffee,
-    #ffffee 2em,
-    #eeeeee 2em,
-    #eeeeee 4em
-  );
+  background-color: #000000;
 }
 .main-content {
   min-height: 100vh;
@@ -46,9 +42,7 @@ input {
   padding: 0.5em;
   font-size: 100%;
 }
-input.button {
-  background-color: #99ff99;
-}
+
 table {
   border: 1px solid #000000;
   border-collapse: collapse;
@@ -61,4 +55,18 @@ table td, table th {
 }
 .spacer {
   margin: 3em 0;
+}
+
+.test-form {
+  background-color: aquamarine;
+}
+.hamish{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: green;
+}
+#dan{
+  color:#999999;
+  font-family: 'Courier New', Courier, monospace;
 }

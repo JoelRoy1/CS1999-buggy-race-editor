@@ -9,15 +9,64 @@
       <td>ID:</td> <td> {{ buggy['id'] }} </td>
     </tr>
     <tr>
+      <td>Wheel Type:</td><td> {{ buggy['wheels'] }}</td>
+    </tr>
+    <tr>
       <td>Wheels:</td> <td> {{ buggy['qty_wheels'] }} </td>
     </tr>
     <tr>
       <td>Flag Colour:</td><td> {{ buggy['flag_color'] }}</td>
     </tr>
+    <tr>
+      <td>Secondary Flag Colour: </td><td> {{ buggy['flag_color_secondary'] }}</td>
+    </tr>
+    <tr>
+      <td>Flag Pattern:</td><td> {{ buggy['flag_pattern'] }}</td>
+    </tr>
+    <tr>
+      <td>Main Power Type:</td><td> {{ buggy['power_type'] }}</td>
+    </tr>
+    <tr>
+      <td>Main Power Units:</td><td> {{ buggy['power_units'] }}</td>
+    </tr>
+    <tr>
+      <td>Auxiliary Power Type:</td><td> {{ buggy['aux_power_type'] }}</td>
+    </tr>
+    <tr>
+      <td>Auxiliary Power Units:</td><td> {{ buggy['aux_power_units'] }}</td>
+    </tr>
+    <tr>
+      <td>Hamster Booster:</td><td> {{ buggy['hamster_botter'] }}</td>
+    </tr>
+    <tr>
+      <td>Armour Type:</td><td> {{ buggy['armour'] }}</td>
+    </tr>
+    <tr>
+      <td>Attack type:</td><td> {{ buggy['attack'] }}</td>
+    </tr>
+    <tr>
+      <td>Number of Attacks:</td><td> {{ buggy['qty_attacks'] }}</td>
+    </tr>
+    <tr>
+      <td>fireproof:</td><td> {{ buggy['fireproof'] }}</td>
+    </tr>
+    <tr>
+      <td>insulated:</td><td> {{ buggy['insulate'] }}</td>
+    </tr>
+    <tr>
+      <td>antibiotic:</td><td> {{ buggy['antibiotic'] }}</td>
+    </tr>
+    <tr>
+      <td>Banging:</td><td> {{ buggy['banging'] }}</td>
+    </tr>
+    <tr>
+      <td>Algorithm:</td><td> {{ buggy['algo'] }}</td>
+    </tr>
   </table>
+  
+  <a href="/json" class="button">Get buggy JSON</a>
 
-  <p>
+
     <a href="/" class="button">home</a>
-  </p>
 
 {% endblock %}

@@ -1,22 +1,90 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-  <h1>Make buggy</h1>
+<div class="col-md-8 mx-auto">
+  <div>
+  <h1>Make a buggy</h1>
 
   <form action="/new" method="post">
-    <div class="form-group col-md-6">
+    <div>
       {{ form.csrf_token() }}
       <label for=""> {{ form.wheels.label }}</label>
       {{ form.wheels }}
     </div>
-    <label for="flag_color">Flag Colour</label>
-    <input type="text" name="flag_color"/>
+    <div>
+      <label for=""> {{ form.qty_wheels.label }}</label>
+      {{ form.qty_wheels }}
+    </div>
+    <div>
+      <label for=""> {{ form.flag_color.label }}</label>
+      {{ form.flag_color }}
+    </div>
+    <div>
+      <label for=""> {{ form.secondary_flag_color.label }}</label>
+      {{ form.secondary_flag_color }}
+    </div>
+    <div>
+      <label for=""> {{ form.flag_pattern.label }}</label>
+      {{ form.flag_pattern }}
+    </div>
+    <div>
+      <label for=""> {{ form.power_type.label }}</label>
+      {{ form.power_type }}
+    </div>
+    <div>
+      <label for=""> {{ form.power_units.label }}</label>
+      {{ form.power_units }}
+    </div>
+    <div>
+      <label for=""> {{ form.aux_power_type.label }}</label>
+      {{ form.aux_power_type }}
+    </div>
+    <div>
+      <label for=""> {{ form.aux_power_units.label }}</label>
+      {{ form.aux_power_units }}
+    </div>
+    <div>
+      <label for=""> {{ form.armour.label }}</label>
+      {{ form.armour }}
+    </div>
+    <div>
+      <label for=""> {{ form.attack.label }}</label>
+      {{ form.attack }}
+    </div>
+    <div>
+      <label for=""> {{ form.qty_attacks.label }}</label>
+      {{ form.qty_attacks }}
+    </div>
+    <div>
+      <label for=""> {{ form.algo.label }}</label>
+      {{ form.algo }}
+    </div>
+    <div>
+      <label for=""> {{ form.hamster_booster.label }}</label>
+      {{ form.hamster_booster }}
+    </div>
+    <div>
+      <label for=""> {{ form.fireproof.label }}</label>
+      {{ form.fireproof }}
+    </div>
+    <div>
+      <label for=""> {{ form.insulated.label }}</label>
+      {{ form.insulated }}
+    </div>
+    <div>
+      <label for=""> {{ form.antibiotic.label }}</label>
+      {{ form.antibiotic }}
+    </div>
+    <div>
+      <label for=""> {{ form.banging.label }}</label>
+      {{ form.banging }}
+    </div>
     <input type="submit" class="button">
   </form>
 
-  <p>
+  
     <a href="/" class="button">home</a>
-  </p>
+  </div>
+</div>
 
 {% endblock %}
